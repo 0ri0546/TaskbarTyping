@@ -1,0 +1,31 @@
+﻿Discord Taskbar Typing
+
+Affiche, au-dessus de la barre des tâches, la photo de profil des personnes
+(3 maximum) qui sont en train de vous écrire en message privé sur Discord.
+
+CE QUE FAIT L'INSTALLATEUR
+- Copie le programme d'affichage dans votre dossier utilisateur (aucun droit
+  administrateur requis).
+- Installe une version de Vencord (un mod du client Discord) contenant le
+  plugin TaskbarTyping, et l'injecte dans Discord.
+- Le programme se lance avec Discord et se ferme quand Discord est quitté.
+
+A SAVOIR
+- Les mods du client Discord ne sont pas autorisés par les conditions
+  d'utilisation de Discord. En pratique le risque est très faible pour un
+  plugin qui ne fait que lire des événements locaux, mais il n'est pas nul.
+  Vous l'utilisez à vos risques.
+- Après une mise à jour de Discord, le mod peut disparaître. Lancez alors
+  "Réparer" depuis le menu Démarrer (dossier Discord Taskbar Typing).
+- Le plugin ne lit que les événements "en train d'écrire" des messages
+  privés, ne les envoie qu'à votre propre ordinateur (127.0.0.1) et ne
+  transmet rien sur Internet.
+- Ce projet n'est affilié ni à Discord ni à Vencord.
+
+LICENCES ET SOURCES
+- Vencord est sous licence GPL-3.0 : https://github.com/Vendicated/Vencord
+  Le commit utilisé pour cette version est indiqué dans BUILD-INFO.txt.
+- VencordInstallerCli (GPL-3.0) : https://github.com/Vencord/Installer
+- Code source du plugin et de l'overlay : METTRE-ICI-L-URL-DU-DEPOT
+  (à remplacer avant de distribuer l'installateur)
+- Texte de la licence : LICENSE-Vencord-GPL3.txt

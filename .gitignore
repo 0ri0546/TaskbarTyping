@@ -1,0 +1,19 @@
+# Sorties de build (a publier dans les "Releases" GitHub, pas dans le depot)
+installer/build/
+installer/output/
+
+# Compilation C++
+*.exe
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+.vs/
+x64/
+Debug/
+Release/
+
+# Divers
+node_modules/
+*.log
