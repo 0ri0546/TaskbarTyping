@@ -125,14 +125,46 @@ begin
 end;
 
 procedure CurStepChanged(CurStep: TSetupStep);
+var
+  DistDir: String;
 begin
   if CurStep = ssPostInstall then
   begin
+    DistDir := ExpandConstant('{app}\vencord\dist');
+
+    if not FileExists(DistDir + '\patcher.js') then
+    begin
+      MsgBox(
+        'Installation incomplete.' + #13#10 + #13#10 +
+        'Le fichier Vencord suivant est manquant :' + #13#10 +
+        DistDir + '\patcher.js' + #13#10 + #13#10 +
+        'Discord ne sera pas modifié.',
+        mbError,
+        MB_OK
+      );
+      Exit;
+    end;
+
+    if not FileExists(DistDir + '\preload.js') then
+    begin
+      MsgBox(
+        'Installation incomplete : preload.js est manquant.' + #13#10 +
+        'Discord ne sera pas modifié.',
+        mbError,
+        MB_OK
+      );
+      Exit;
+    end;
+
     if not RunVencordCli('-install -branch stable') then
-      MsgBox('L''installation dans Discord a échoué.' + #13#10 + #13#10 +
-             'Ferme complètement Discord, puis lance "Réparer" depuis le menu Démarrer ' +
-             '(dossier ' + '{#AppName}' + '). Une console affichera le détail.',
-             mbError, MB_OK);
+    begin
+      MsgBox(
+        'L''installation dans Discord a échoué.' + #13#10 + #13#10 +
+        'Discord ne sera pas considéré comme installé avec TaskbarTyping.',
+        mbError,
+        MB_OK
+      );
+    end;
   end;
 end;
 

@@ -142,6 +142,22 @@ New-Item -ItemType Directory -Path (Join-Path $stg "vencord\dist") -Force | Out-
 
 Copy-Item $overlay (Join-Path $stg "DiscordTaskbarTyping.exe")
 Get-ChildItem $distDir -File | Copy-Item -Destination (Join-Path $stg "vencord\dist")
+Write-Host ""
+Write-Host "=== VERIFICATION DU STAGING ===" -ForegroundColor Yellow
+
+Get-ChildItem (Join-Path $stg "vencord\dist") |
+    Select-Object Name, Length |
+    Format-Table -AutoSize
+
+foreach ($f in "patcher.js", "preload.js", "renderer.js", "renderer.css") {
+    $path = Join-Path $stg "vencord\dist\$f"
+
+    if (-not (Test-Path $path)) {
+        throw "ERREUR STAGING : $path est absent"
+    }
+
+    Write-Host "OK : $f" -ForegroundColor Green
+}
 
 # package.json vide : evite que Node remonte l'arborescence et tombe sur un
 # package.json "type: module" qui casserait patcher.js
