@@ -26,6 +26,6 @@ LICENCES ET SOURCES
 - Vencord est sous licence GPL-3.0 : https://github.com/Vendicated/Vencord
   Le commit utilisé pour cette version est indiqué dans BUILD-INFO.txt.
 - VencordInstallerCli (GPL-3.0) : https://github.com/Vencord/Installer
-- Code source du plugin et de l'overlay : METTRE-ICI-L-URL-DU-DEPOT
+- Code source du plugin et de l'overlay : https://github.com/0ri0546/TaskbarTyping
   (à remplacer avant de distribuer l'installateur)
 - Texte de la licence : LICENSE-Vencord-GPL3.txt
