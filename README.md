@@ -67,3 +67,20 @@ Le Setup est créé dans `installer\output\`. Le commit de Vencord embarqué est
 GPL-3.0 (voir `LICENSE`). Le plugin s'appuie sur les API internes de
 [Vencord](https://github.com/Vendicated/Vencord) (GPL-3.0), et l'installateur distribue un build
 de Vencord : le tout est donc publié sous la même licence, avec ces sources.
+
+## Code signing policy
+
+Free code signing provided by SignPath.io, certificate by SignPath Foundation.
+
+### Roles
+
+- Committer / Reviewer / Approver: Lucas Marcucci (@0ri0546)
+
+### Privacy
+
+This program will not transfer any information to other networked systems unless specifically requested by the user or the person installing or operating it.
+
+### Build and signing
+
+Signed binaries are built from the source code and build scripts available in this repository.
+Releases are manually approved before code signing.
